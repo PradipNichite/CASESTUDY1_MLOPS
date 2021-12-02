@@ -37,8 +37,8 @@ jobs:
         pytest -v
     - name: Deploy to Heroku
       env:
-        HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
-        HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
+        HEROKU_API_TOKEN: 'casestudy-mlops'
+        HEROKU_APP_NAME: '3a9187f4-45bb-4759-af5b-fe594af16262'
       if: github.ref == 'refs/heads/main' && job.status == 'success'
       run: |
         git remote add heroku https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$HEROKU_APP_NAME.git
